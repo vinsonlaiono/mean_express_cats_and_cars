@@ -2,14 +2,12 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-// app.set('views', __dirname + '/views'); 
+app.set('views', __dirname + '/views'); 
 
 app.set('view engine', 'users.ejs');
 app.engine('html', require('ejs').renderFile);
 
 app.use(express.static(__dirname + "/static"));
-
-console.log(__dirname)
 
 app.get('/', function(request, response){
     response.send("This is the root route for all you mofo's out there that doubt me.")
